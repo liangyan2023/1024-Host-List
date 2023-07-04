@@ -1,0 +1,72 @@
+name: Daily Update
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * *' # 每日UTC 0时
+
+env:
+  SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: checkout actions
+        run : |
+          sudo apt-get update
+          sudo apt-get -y install git
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run : |
+          pip3 install requests
+
+      - name: Run main.py
+        run : |
+          python main.py ${{ secrets.GET_HOSTS_API }} ${{ secrets.GET_HOSTS_API_PAYLOAD }} > output.txt
+          echo "updated=$(cat output.txt)" >> $GITHUB_ENV
+
+      - name: Create SSH key
+        if: ${{ env.updated == 'true' }}
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add ~/.ssh/id_rsa
+
+      - name: Upload updated file
+        if: ${{ env.updated == 'true' }}
+        run: |
+          git config --global user.name "${{ secrets.USER_NAME }}"
+          git config --global user.email "${{ secrets.USER_EMAIL }}"
+          git add .
+          git commit -m "$(date +"%Y年%m月%d日")更新"
+          git push git@github.com:${{ github.repository }}.git HEAD:main
+
+      - uses: josStorer/get-current-time@v2.0.2
+        if: ${{ env.updated == 'true' }}
+        id: current-time
+        with:
+          format: YYYY-MM-DD HH:mm:ss
+          utcOffset: "+08:00"
+
+      - uses: easychen/github-action-server-chan@v1.0.0
+        if: ${{ env.updated == 'true' }}
+        with:
+          sendkey: ${{ secrets.sendkey }}
+          title: "社区域名有更新"
+          desp: "仓库更新于 ${{ steps.current-time.outputs.formattedTime }}"
