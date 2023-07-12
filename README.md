@@ -13,3 +13,4 @@
 | **cl.6819x.xyz** | **cl.6819y.xyz** | **cl.6819z.xyz** |
 | **cl.6350x.xyz** | **cl.6350y.xyz** | **cl.6350z.xyz** |
 | **cl.9202x.xyz** | **cl.9202y.xyz** | **cl.9202z.xyz** |
+| **cl.2612x.xyz** | **cl.2612y.xyz** | **cl.2612z.xyz** |
