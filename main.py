@@ -14,6 +14,11 @@ def saveHosts(hostList):
 
 def saveREADME(hostList):
     content = f'''# 1024 Host List
+最新域名：
+
+| {" | ".join(hostList[-3:])} |
+| ---- | ---- | ---- |
+
 1024社区域名列表
 
 | {" | ".join(hostList[:3])} |
@@ -23,7 +28,6 @@ def saveREADME(hostList):
     for i in range(3, len(hostList), 3):
         content += f"| {' | '.join(['**' + i + '**' for i in hostList[i:i+3]])} |\n"
     with open("README.md", "w+", encoding='utf8') as file:file.write(content)
-
 
 def getHosts() -> list:
     url = sys.argv[1]
