@@ -1,7 +1,7 @@
 # 1024 Host List
 最新域名：
 
-| cl.5625x.xyz | cl.5625y.xyz | cl.5625z.xyz |
+| cl.1538x.xyz | cl.1538y.xyz | cl.1538z.xyz |
 | ---- | ---- | ---- |
 
 1024社区域名列表
@@ -20,3 +20,4 @@
 | **cl.9202x.xyz** | **cl.9202y.xyz** | **cl.9202z.xyz** |
 | **cl.2612x.xyz** | **cl.2612y.xyz** | **cl.2612z.xyz** |
 | **cl.5625x.xyz** | **cl.5625y.xyz** | **cl.5625z.xyz** |
+| **cl.1538x.xyz** | **cl.1538y.xyz** | **cl.1538z.xyz** |
