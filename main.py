@@ -41,12 +41,12 @@ def getHosts() -> list:
     return hostList
 
 def checkHost(host):
-    headers  = {
-        'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.34'
-    }
+    headers  = {}
+    headers['user-agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.34'
     try:
-        requests.get(f'https://{host}/index.php', headers=headers)
-        return True
+        response = requests.get(f'https://{host}/index.php', headers=headers)
+        if '歡迎新會員' in response.text:return True
+        else:return False
     except requests.exceptions.ConnectionError:return False
 
 def main():
