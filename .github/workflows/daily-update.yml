@@ -57,16 +57,16 @@ jobs:
           git commit -m "$(date +"%Y年%m月%d日")更新"
           git push git@github.com:${{ github.repository }}.git HEAD:main
 
-      - uses: josStorer/get-current-time@v2.0.2
-        if: ${{ env.updated == 'true' }}
-        id: current-time
-        with:
-          format: YYYY-MM-DD HH:mm:ss
-          utcOffset: "+08:00"
+      # - uses: josStorer/get-current-time@v2.0.2
+      #   if: ${{ env.updated == 'true' }}
+      #   id: current-time
+      #   with:
+      #     format: YYYY-MM-DD HH:mm:ss
+      #     utcOffset: "+08:00"
 
-      - uses: easychen/github-action-server-chan@v1.0.0
-        if: ${{ env.updated == 'true' }}
-        with:
-          sendkey: ${{ secrets.sendkey }}
-          title: "社区域名有更新"
-          desp: "仓库更新于 ${{ steps.current-time.outputs.formattedTime }}"
+      # - uses: easychen/github-action-server-chan@v1.0.0
+      #   if: ${{ env.updated == 'true' }}
+      #   with:
+      #     sendkey: ${{ secrets.sendkey }}
+      #     title: "社区域名有更新"
+      #     desp: "仓库更新于 ${{ steps.current-time.outputs.formattedTime }}"
