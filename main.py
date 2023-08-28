@@ -12,7 +12,7 @@ def loadHosts() -> list:
 def saveHosts(hostList):
     with open("1024_hosts.json", "w+", encoding='utf8') as file:json.dump(hostList, file, ensure_ascii=False, indent = 4)
 
-def saveREADME(hostList):
+def saveREADME(hostList, table_columns = 6): # table_columns 控制每行的列数
     content = f'''# 1024 Host List
 最新域名：
 
@@ -21,12 +21,12 @@ def saveREADME(hostList):
 
 1024社区域名列表
 
-| {" | ".join(hostList[:3])} |
-| :---: | :---: | :---: |
+| {" | ".join(hostList[:table_columns])} |
+{"| :---: " * table_columns}|
 '''
 
-    for i in range(3, len(hostList), 3):
-        content += f"| {' | '.join(['**' + i + '**' for i in hostList[i:i+3]])} |\n"
+    for i in range(table_columns, len(hostList), table_columns):
+        content += f"| {' | '.join(['**' + i + '**' for i in hostList[i:i+table_columns]])} |\n"
     with open("README.md", "w+", encoding='utf8') as file:file.write(content)
 
 def getHosts() -> list:
