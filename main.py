@@ -13,7 +13,10 @@ def saveHosts(hostList):
     with open("1024_hosts.json", "w+", encoding='utf8') as file:json.dump(hostList, file, ensure_ascii=False, indent = 4)
 
 def saveREADME(hostList, table_columns = 6): # table_columns 控制每行的列数
-    content = f'''# 1024 Host List
+    content = f'''<h1 align="center">1024 Host List</h1>
+<p align="center" class="shields">
+    <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2Fpooneyy%2F1024-Host-List.json%3Fshow%3Dunique&style=flat-square&label=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&labelColor=pink&color=default" alt="Visitors"/>
+</p>
 最新域名：
 
 | {" | ".join(hostList[-3:])} |
