@@ -2,8 +2,8 @@ name: Daily Update
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 8 * * *' # 每日UTC+8 16时
+  # schedule:
+  #   - cron: '0 8 * * *' # 每日UTC+8 16时
 
 env:
   SSH_AUTH_SOCK: /tmp/ssh_agent.sock
