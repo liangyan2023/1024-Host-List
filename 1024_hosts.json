@@ -1,7 +1,4 @@
 [
-    "cl.9730x.xyz",
-    "cl.9730y.xyz",
-    "cl.9730z.xyz",
     "cl.6819x.xyz",
     "cl.6819y.xyz",
     "cl.6819z.xyz",
@@ -85,5 +82,8 @@
     "cl.2167z.xyz",
     "cl.2786x.xyz",
     "cl.2786y.xyz",
-    "cl.2786z.xyz"
+    "cl.2786z.xyz",
+    "cl.8278x.xyz",
+    "cl.8278y.xyz",
+    "cl.8278z.xyz"
 ]
