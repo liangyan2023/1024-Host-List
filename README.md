@@ -4,14 +4,13 @@
 </p>
 最新域名：
 
-| cl.2170x.xyz | cl.2170y.xyz | cl.2170z.xyz |
+| cl.3525x.xyz | cl.3525y.xyz | cl.3525z.xyz |
 | ---- | ---- | ---- |
 
 1024社区域名列表
 
-| cl.2612x.xyz | cl.2612y.xyz | cl.2612z.xyz | cl.5625x.xyz | cl.5625y.xyz | cl.5625z.xyz |
+| cl.1538x.xyz | cl.1538y.xyz | cl.1538z.xyz | cl.2980x.xyz | cl.2980y.xyz | cl.2980z.xyz |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| **cl.1538x.xyz** | **cl.1538y.xyz** | **cl.1538z.xyz** | **cl.2980x.xyz** | **cl.2980y.xyz** | **cl.2980z.xyz** |
 | **cl.6982x.xyz** | **cl.6982y.xyz** | **cl.6982z.xyz** | **cl.2860x.xyz** | **cl.2860y.xyz** | **cl.2860z.xyz** |
 | **cl.6590x.xyz** | **cl.6590y.xyz** | **cl.6590z.xyz** | **cl.8295x.xyz** | **cl.8295y.xyz** | **cl.8295z.xyz** |
 | **cl.7362x.xyz** | **cl.7362y.xyz** | **cl.7362z.xyz** | **cl.3987x.xyz** | **cl.3987y.xyz** | **cl.3987z.xyz** |
@@ -24,4 +23,4 @@
 | **cl.3283x.xyz** | **cl.3283y.xyz** | **cl.3283z.xyz** | **cl.2167x.xyz** | **cl.2167y.xyz** | **cl.2167z.xyz** |
 | **cl.2786x.xyz** | **cl.2786y.xyz** | **cl.2786z.xyz** | **cl.8278x.xyz** | **cl.8278y.xyz** | **cl.8278z.xyz** |
 | **cl.7567x.xyz** | **cl.7567y.xyz** | **cl.7567z.xyz** | **cl.7207x.xyz** | **cl.7207y.xyz** | **cl.7207z.xyz** |
-| **cl.2170x.xyz** | **cl.2170y.xyz** | **cl.2170z.xyz** |
+| **cl.2170x.xyz** | **cl.2170y.xyz** | **cl.2170z.xyz** | **cl.3525x.xyz** | **cl.3525y.xyz** | **cl.3525z.xyz** |
