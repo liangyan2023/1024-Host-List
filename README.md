@@ -4,7 +4,7 @@
 </p>
 最新域名：
 
-| cl.3525x.xyz | cl.3525y.xyz | cl.3525z.xyz |
+| cl.7679x.xyz | cl.7679y.xyz | cl.7679z.xyz |
 | ---- | ---- | ---- |
 
 1024社区域名列表
@@ -24,3 +24,4 @@
 | **cl.2786x.xyz** | **cl.2786y.xyz** | **cl.2786z.xyz** | **cl.8278x.xyz** | **cl.8278y.xyz** | **cl.8278z.xyz** |
 | **cl.7567x.xyz** | **cl.7567y.xyz** | **cl.7567z.xyz** | **cl.7207x.xyz** | **cl.7207y.xyz** | **cl.7207z.xyz** |
 | **cl.2170x.xyz** | **cl.2170y.xyz** | **cl.2170z.xyz** | **cl.3525x.xyz** | **cl.3525y.xyz** | **cl.3525z.xyz** |
+| **cl.7679x.xyz** | **cl.7679y.xyz** | **cl.7679z.xyz** |
