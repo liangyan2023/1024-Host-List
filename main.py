@@ -1,6 +1,10 @@
 import json
+import os
 import requests
-import sys
+
+def getReadmeConfig() -> dict:
+    try:return requests.get(os.environ['GET_README_CONFIG']).json()
+    except:return {'content1': '','content2': '','table_columns': 6}
 
 def loadHosts() -> list:
     hostList = []
@@ -12,11 +16,14 @@ def loadHosts() -> list:
 def saveHosts(hostList):
     with open("1024_hosts.json", "w+", encoding='utf8') as file:json.dump(hostList, file, ensure_ascii=False, indent = 4)
 
-def saveREADME(hostList, table_columns = 6): # table_columns 控制每行的列数
+def saveREADME(hostList):
+    readmeConfig = getReadmeConfig()
+    table_columns = readmeConfig['table_columns'] # table_columns 控制每行的列数
     content = f'''<h1 align="center">1024 Host List</h1>
 <p align="center" class="shields">
     <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fhits.dwyl.com%2Fpooneyy%2F1024-Host-List.json%3Fshow%3Dunique&style=flat-square&label=%E8%AE%BF%E9%97%AE%E4%BA%BA%E6%95%B0&labelColor=pink&color=default" alt="Visitors"/>
 </p>
+{readmeConfig['content1']}
 最新域名：
 
 | {" | ".join(hostList[-3:])} |
@@ -30,11 +37,12 @@ def saveREADME(hostList, table_columns = 6): # table_columns 控制每行的列�
 
     for i in range(table_columns, len(hostList), table_columns):
         content += f"| {' | '.join(['**' + i + '**' for i in hostList[i:i+table_columns]])} |\n"
+    content += f'\n{readmeConfig['content2']}'
     with open("README.md", "w+", encoding='utf8') as file:file.write(content)
 
 def getHosts() -> list:
-    url = sys.argv[1]
-    data = json.loads(sys.argv[2])
+    url = os.environ['GET_HOSTS_API']
+    data = json.loads(os.environ['GET_HOSTS_API_PAYLOAD'])
     response = requests.post(url,data=data)
     response = json.loads(response.text)
     hostList = []

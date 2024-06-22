@@ -1,9 +1,9 @@
-name: Daily Update
+name: Daily Update on Self-Hosted
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 8 * * *' # 每日UTC+8 16时
+  schedule:
+    - cron: '0 8 * * *' # 每日UTC+8 16时
 
 env:
   SSH_AUTH_SOCK: /tmp/ssh_agent.sock
@@ -13,19 +13,13 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
         with:
-          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
           persist-credentials: false
           fetch-depth: 0
-
-      - name: checkout actions
-        run : |
-          sudo apt-get update
-          sudo apt-get -y install git
 
       - name: Setup Python
         uses: actions/setup-python@v2
@@ -63,6 +57,12 @@ jobs:
           git add .
           git commit -S -m "$(date +"%Y年%m月%d日")更新"
           git push git@github.com:${{ github.repository }}.git HEAD:main
+
+      - name: Close ssh-agent
+        if: ${{ env.updated == 'true' }}
+        run: |
+          ps -eo pid,user,comm | grep ssh-agent | grep -w runner | awk '{print $1}' | xargs -r kill -9
+          rm -rf $SSH_AUTH_SOCK
 
       # - uses: josStorer/get-current-time@v2.0.2
       #   if: ${{ env.updated == 'true' }}
