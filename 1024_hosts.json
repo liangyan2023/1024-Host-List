@@ -1,7 +1,5 @@
 [
-    "cl.2860x.xyz",
     "cl.2860y.xyz",
-    "cl.2860z.xyz",
     "cl.6590y.xyz",
     "cl.6590z.xyz",
     "cl.8295y.xyz",
@@ -74,5 +72,8 @@
     "cl.7679z.xyz",
     "cl.9561x.xyz",
     "cl.9561y.xyz",
-    "cl.9561z.xyz"
+    "cl.9561z.xyz",
+    "cl.8232x.xyz",
+    "cl.8232y.xyz",
+    "cl.8232z.xyz"
 ]
